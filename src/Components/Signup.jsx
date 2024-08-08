@@ -1,8 +1,11 @@
-import React, { useState } from "react";
-import s from "./login.module.css";
+import { useState } from "react";
+import s from '../layout/Header/login.module.css'
+// import { Form, Button, Alert } from "react-bootstrap";
+// import { useMutation } from "@apollo/client";
+// import { NEW_USER } from "../utils/mutations";
 
-const LogIn = ({ openModalLogin }) => {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+const Signup = ({openModalSignup}) => {
+  const [form, setForm] = useState({ name: "", email: "", pasword: "" });
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -15,8 +18,8 @@ const LogIn = ({ openModalLogin }) => {
   return (
     <div className={s.backDrop}>
       <div className={s.modal}>
-        <p>Log in</p>
-        <button className={s.closeBtn} onClick={openModalLogin}>
+        <p>Sign up</p>
+        <button className={s.closeBtn} onClick={openModalSignup}>
           X
         </button>
         <form onSubmit={handleSubmit}>
@@ -26,6 +29,7 @@ const LogIn = ({ openModalLogin }) => {
             placeholder="Your Name"
             required
             onChange={handleChange}
+            value={form.name}
             onBlur={() => {
               if (form.name == "") {
                 document.getElementById("name-notice").style.display = "block";
@@ -43,6 +47,7 @@ const LogIn = ({ openModalLogin }) => {
             type="email"
             name="email"
             placeholder="Your Email"
+            value={form.email}
             required
             onChange={handleChange}
           />
@@ -51,11 +56,22 @@ const LogIn = ({ openModalLogin }) => {
           </p>
           <hr />
 
+          <input
+            type="password"
+            name="password"
+            placeholder="Your Email"
+            value={form.password}
+            required
+            onChange={handleChange}
+          />
+          <p className="notice" id="email-notice">
+            Email cannot be empty!
+          </p>
+          <hr />
           <button type="submit">Submit</button>
         </form>
       </div>
     </div>
   );
 };
-
-export default LogIn;
+export default Signup;

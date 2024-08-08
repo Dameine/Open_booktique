@@ -3,7 +3,7 @@ import s from "./login.module.css"
 
 
 const LogIn = ({openModalLogin}) => {
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [form, setForm] = useState({ username: '', password: ''});
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -22,7 +22,7 @@ const LogIn = ({openModalLogin}) => {
         <input
           type="text"
           name="name"
-          placeholder="Your Name"
+          placeholder="Your Username"
           required
           onChange={handleChange}
           onBlur={() => {
@@ -37,13 +37,13 @@ const LogIn = ({openModalLogin}) => {
         <hr/>
 
         <input
-          type="email"
-          name="email"
-          placeholder="Your Email"
+          type="password"
+          name="password"
+          placeholder="Your Password"
           required
           onChange={handleChange}
         />
-        <p className="notice" id="email-notice">Email cannot be empty!</p>
+        <p className="notice" id="email-notice">Password cannot be empty!</p>
         <hr/>
 
         <button type="submit">Submit</button>

@@ -6,7 +6,7 @@ export const CinemaList = () => {
         {cinema.map(elem => <li key={elem.id} className={s.cinemaItem}>
             <img src={elem.image} alt={elem.title} />
             <p>{elem.description}</p>
-            <button type="button">Add to Cart</button>
+            <button type="button">Add to favories movies</button>
             </li>
             )}
     </ul>

@@ -21,7 +21,10 @@ const Header = () => {
               </button>
             </li>
             <li>
-              <button type="button" onClick={openModalSignup}> signup </button>
+              <button type="button" onClick={openModalSignup}> Signup </button>
+            </li>
+            <li>
+              <button type="button" onClick={openModalSignup}> Favories movies </button>
             </li>
           </ul>
           {loginIsOpen && <Login openModalLogin={openModalLogin} />}

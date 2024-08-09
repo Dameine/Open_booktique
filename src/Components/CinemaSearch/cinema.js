@@ -1,4 +1,4 @@
-import image from "../../img/img1.jpg"
+import image from "../../assets/img/img1.jpg"
 export const cinema = [
     {
        id: 1,

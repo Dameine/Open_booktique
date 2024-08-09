@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import s from "./login.module.css" 
+import React, { useState } from "react";
+import s from "./login.module.css";
 
 
 const LogIn = ({openModalLogin}) => {
@@ -12,7 +12,7 @@ const LogIn = ({openModalLogin}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
-  
+
   return (
   <div className={s.backDrop}>
     <div className={s.modal}>
@@ -46,9 +46,10 @@ const LogIn = ({openModalLogin}) => {
         <p className="notice" id="email-notice">Password cannot be empty!</p>
         <hr/>
 
-        <button type="submit">Submit</button>
-      </form>
-    </div></div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
   );
 };
 
